@@ -1,0 +1,68 @@
+1. Start Fresh in a Repo
+
+# Go to repo root
+cd ~/relational-database-freecodecamp
+
+# Remove all tracked files (keep folder)
+git rm -r *
+
+# Copy your local project files into repo root
+cp -r ~/freecodecamp/* ./
+
+# Stage and commit changes
+git add .
+git commit -m "Start fresh: add freeCodeCamp project files"
+
+# Push to GitHub, overwriting old files
+git push -f origin main
+
+
+2. Normal Updates / Pushing Changes
+
+# Go to repo root
+cd ~/relational-database-freecodecamp
+
+# Stage any changes
+git add .
+
+# Commit with a message
+git commit -m "Your message here"
+
+# Push changes
+git push origin main
+
+3. Fix Arrow / Submodule Folder
+
+# Remove folder from Git tracking, keep files
+git rm -r --cached "Build a Student Database Part 2"
+
+# Re-add it as a normal folder
+git add "Build a Student Database Part 2"
+
+# Commit and push
+git commit -m "Fix Part 2 folder: track as normal folder"
+git push -f origin main
+
+
+4. Check Status and Repo Health
+
+# Check branch and sync
+git status
+
+# List all files including hidden
+ls -a
+
+# Check which files are staged / untracked
+git status
+
+5. Repo Notes / Tips
+
+Repo root = folder containing .git
+
+Always copy your local files into repo root, not inside another folder
+
+git rm -r --cached removes tracking but keeps your files
+
+Only use git push -f when overwriting old commits is safe
+
+GitHub arrows = submodules / symlinks / empty folders
