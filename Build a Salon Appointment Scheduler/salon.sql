@@ -154,6 +154,8 @@ COPY public.appointments (appointment_id, customer_id, service_id, "time") FROM 
 25	24	1	10:30
 26	24	1	10:00
 27	24	5	900
+28	33	1	9000
+29	24	1	12:00
 \.
 
 
@@ -165,6 +167,13 @@ COPY public.customers (customer_id, phone, name) FROM stdin;
 24	555-555-5555	Fabio
 25		
 26	1234	Rex
+27	555-555-555	Rrr
+28	555-555-55	Pow
+29	55555	Por
+30	5464	Tyu
+31	1	Mnb
+32	234234	dfjgdfg
+33	2222	Re
 \.
 
 
@@ -185,14 +194,14 @@ COPY public.services (service_id, name) FROM stdin;
 -- Name: appointments_appointment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.appointments_appointment_id_seq', 27, true);
+SELECT pg_catalog.setval('public.appointments_appointment_id_seq', 29, true);
 
 
 --
 -- Name: customers_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.customers_customer_id_seq', 26, true);
+SELECT pg_catalog.setval('public.customers_customer_id_seq', 33, true);
 
 
 --

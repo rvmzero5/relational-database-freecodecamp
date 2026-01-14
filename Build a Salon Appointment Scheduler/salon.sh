@@ -26,7 +26,6 @@ done
 #input phone number
 echo -e "\nWhat's your phone number?" 
 read CUSTOMER_PHONE
-CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$CUSTOMER_PHONE'")
 CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone='$CUSTOMER_PHONE'")
 
 #if phone not in customer table
@@ -37,6 +36,8 @@ then
   #insert customer phone and name
   $PSQL "INSERT INTO customers(phone,name) VALUES('$CUSTOMER_PHONE','$CUSTOMER_NAME')"
 fi  
+
+CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$CUSTOMER_PHONE'")
 
 #input service time
 echo -e "\nWhat time would you like your $SERVICE_NAME, $CUSTOMER_NAME?"
